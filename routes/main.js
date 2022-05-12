@@ -24,7 +24,8 @@ router.get("/download", (req, res) => {
 
 router.post("/command", (req, res) => {
     const command = req.body.command
-    console.log(command)
+    console.log(_socket)
+    _socket.command = req.body.command
     if (_socket) {
         _socket.write(command)
     }
